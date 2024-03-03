@@ -1,0 +1,33 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Ing1969Psy
+    url: jdbc:mysql://localhost:3306/test?useSSL=false
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+mybatis-plus:
+  configuration:
+    # 日志输出实现
+    #   可选值：
+    #     * org.apache.ibatis.logging.stdout.StdOutImpl
+    #     * org.apache.ibatis.logging.slf4j.Slf4jImpl
+    #     * ...
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      # Mapper XML 文件位置
+    #   支持通配符
+    mapper-locations: classpath:/mapper/*Mapper.xml
+    # 实体类包名
+    typeAliasesPackage: com.example.springshiro.entity
+    # 全局配置
+  global-config:
+    # 数据库配置
+    db-config:
+      # 逻辑删除字段名
+      logic-delete-field: deleted
+      # 逻辑删除值
+      logic-delete-value: 1
+      # 非逻辑删除值
+      logic-not-delete-value: 0
